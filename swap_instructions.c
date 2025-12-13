@@ -6,7 +6,7 @@
 /*   By: nograu <nograu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 15:45:10 by nograu            #+#    #+#             */
-/*   Updated: 2025/12/13 18:12:45 by nograu           ###   ########.fr       */
+/*   Updated: 2025/12/13 18:44:46 by nograu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	sb(v_list **b)
 
 void	ss(v_list **a, v_list **b)
 {
-	sa(&a);
-	sb(&b);
+	sa(*&a);
+	sb(*&b);
 }
  // a = 1er pointeur, a->next = 2eme pointeur.
