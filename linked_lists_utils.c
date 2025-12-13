@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   linked_lists.c                                     :+:      :+:    :+:   */
+/*   linked_lists_utils.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nograu <nograu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 15:04:22 by nograu            #+#    #+#             */
-/*   Updated: 2025/12/13 15:34:19 by nograu           ###   ########.fr       */
+/*   Updated: 2025/12/13 16:05:38 by nograu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,21 @@ void	ps_lstadd_back(v_list **lst, v_list *new)
 	while (last->next != NULL)
 		last = last->next;
 	last->next = new;
+}
+
+int	ps_lstsize(v_list *lst)
+{
+	v_list	*current;
+	int		i;
+
+	i = 0;
+	current = lst;
+	if (!lst)
+		return (0);
+	while (current != NULL)
+	{
+		i++;
+		current = current->next;
+	}
+	return (i);
 }

@@ -6,7 +6,7 @@
 /*   By: nograu <nograu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 15:01:24 by nograu            #+#    #+#             */
-/*   Updated: 2025/12/13 15:30:42 by nograu           ###   ########.fr       */
+/*   Updated: 2025/12/13 18:00:44 by nograu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,13 @@
 
 int	main(int argc, char **argv)
 {
-	int	i;
+	int		i;
 	v_list	*a;
+	v_list	*b;
 	v_list	*current;
-	
+
 	a = NULL;
+	b = NULL;
 	i = 1;
 	if (argc < 2)
 		return (write(2, "Error\n", 6));
@@ -37,12 +39,23 @@ int	main(int argc, char **argv)
 		ps_lstadd_back(&a, ps_lstnew(ft_atoi(argv[i++])));
 	//push_swap(a_stack);
 	current = a;
+	printf("\nOriginal a_stack: \n");
+	while (current != NULL)
+	{
+		printf("%d\n", current->nb);
+		current = current->next;
+	}
+
+	sa(&a);
+	
+	current = a;
 	printf("\nNew a_stack: \n");
 	while (current != NULL)
 	{
 		printf("%d\n", current->nb);
 		current = current->next;
 	}
+	
 	return (0);
 }
 
