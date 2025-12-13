@@ -6,7 +6,7 @@
 /*   By: nograu <nograu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 15:01:24 by nograu            #+#    #+#             */
-/*   Updated: 2025/12/13 18:39:34 by nograu           ###   ########.fr       */
+/*   Updated: 2025/12/13 19:14:53 by nograu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ int	main(int argc, char **argv)
 		current = current->next;
 	}
 
-	//sa(&a);
-	ss(&a, &b);
+	sa(&a);
+	//ss(&a, &b);
 	
 	current = a;
 	printf("\nNew a_stack: \n");
