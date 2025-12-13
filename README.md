@@ -17,6 +17,7 @@ _This project has been created as part of the 42 curriculum by nograu._
 This project aims to sort data in a stack using a limited set of instructions, aiming
 to achieve the lowest possible number of actions.
 
+---
 
 ## Instructions
 <!--  An “Instructions” section containing any relevant information about compilation,
@@ -36,5 +37,7 @@ specifying for which tasks and which parts of the project. -->
 <!-- ## Installation -->
 
 
-
+<!-- https://emojidb.org/numbers-emojis?utm_source=user_search >
+<!-- https://github.com/Abblix/Oidc.Server#readme -->
+<!-- https://github.com/matiassingers/awesome-readme?tab=readme-ov-file -->
 <!-- ⚡ 💬 🤔 🌱 🔭 -->
