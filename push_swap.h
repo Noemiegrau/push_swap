@@ -6,7 +6,7 @@
 /*   By: nograu <nograu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 16:46:27 by nograu            #+#    #+#             */
-/*   Updated: 2025/12/14 18:03:37 by nograu           ###   ########.fr       */
+/*   Updated: 2025/12/14 18:36:51 by nograu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,8 @@ void	pb(v_list **a, v_list **b);
 void	ra(v_list **a);
 void	rb(v_list **b);
 void	rr(v_list **a, v_list **b);
+void	rra(v_list **a);
+void	rrb(v_list **b);
+void	rrr(v_list **a, v_list **b);
 
 #endif
