@@ -6,7 +6,7 @@
 /*   By: nograu <nograu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 16:46:27 by nograu            #+#    #+#             */
-/*   Updated: 2025/12/13 18:44:59 by nograu           ###   ########.fr       */
+/*   Updated: 2025/12/14 15:14:15 by nograu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,15 @@ typedef struct w_list
 
 int		*push_swap(int *a_stack);
 int		main(int argc, char **argv);
-int		main(int argc, char **argv);
 v_list	*ps_lstnew(int nb);
 void	ps_lstadd_back(v_list **lst, v_list *new);
+void	ps_lstadd_front(v_list **lst, v_list *new);
+void	ps_lstdelone(v_list *lst, void (*del)(void *));
 int		ps_lstsize(v_list *lst);
 void	sa(v_list **a);
 void	sb(v_list **b);
 void	ss(v_list **a, v_list **b);
+void	pa(v_list **a, v_list **b);
+void	pb(v_list **a, v_list **b);
 
 #endif

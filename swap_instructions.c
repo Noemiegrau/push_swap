@@ -6,7 +6,7 @@
 /*   By: nograu <nograu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 15:45:10 by nograu            #+#    #+#             */
-/*   Updated: 2025/12/13 19:16:06 by nograu           ###   ########.fr       */
+/*   Updated: 2025/12/14 15:24:33 by nograu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,21 +17,15 @@
 
 void	sa(v_list **a)
 {
-	// v_list	*temp;
-	// v_list	*second;
 	int		temp;
-	
-	
-	// head -> noeud1 -> noeud2
-	//	addr    addr       addr
-	//	next-> next-> next-> NULL
-	
-	// printf("\nThere are %d nods in this list.\n", ps_lstsize(&a));
+
 	if (!a || !*a || !(*a)->next)
-	return ;
+		return ;
 	temp = (*a)->next->nb;
 	(*a)->next->nb = (*a)->nb;
 	(*a)->nb = temp;
+	// v_list	*temp;
+	// v_list	*second;
 	// temp = *a; // sauvegarde du premier noeud dans temp
 	// second = (*a)->next; // initialisation du deuxieme noeud, *a pointe sur lui
 	// temp->next = second->next; // dans le next de temp on met le next qu'il y avait dans second, le 1er pointe sur le 3e
@@ -59,20 +53,34 @@ void	ss(v_list **a, v_list **b)
 	sb(*&b);
 }
 
-// void	pa(v_list **a)
-// {
+void	pa(v_list **a, v_list **b)
+{
+	v_list	*temp;
+	
+	if (!b || !*b)
+		return ;
+	temp = *b; // sauvegarde le 1er noeud de b dans temp
+	*b = (*b)->next; // avance le head de b sur le deuxieme pointeur pour pas couper la chaine
+	temp->next = *a; //le premier noeud de a devient le next du temp (noeud deplace)
+	*a = temp; // temp est place en premier noeud dans a, le head de a pointe mtn sur temp
+}
 
-// }
+void	pb(v_list **a, v_list **b)
+{
+	v_list	*temp;
 
-// void	pb(v_list **b)
-// {
+	if (!a || !*a)
+		return ;
+	temp = *a;
+	*a = (*a)->next;
+	temp->next = *b;
+	*b = temp; 
+}
 
-// }
+void	ra(v_list **a)
+{
 
-// void	ra(v_list **a)
-// {
-
-// }
+}
 
 // void	rb(v_list **b)
 // {
@@ -81,7 +89,8 @@ void	ss(v_list **a, v_list **b)
 
 // void	rr(v_list **a, v_list **b)
 // {
-
+//	ra(*&a);
+//	rb(*&b);
 // }
 
 // void	rra(v_list **a)
@@ -96,7 +105,6 @@ void	ss(v_list **a, v_list **b)
 
 // void	rrr(v_list **a, v_list **b)
 // {
-
+//	rra(*&a);
+//	rrb(*&b);
 // }
-// pa, pb, ra, rb, rr, rra, rrb, rrr
- // a = 1er pointeur, a->next = 2eme pointeur.

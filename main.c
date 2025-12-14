@@ -6,7 +6,7 @@
 /*   By: nograu <nograu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 15:01:24 by nograu            #+#    #+#             */
-/*   Updated: 2025/12/13 19:14:53 by nograu           ###   ########.fr       */
+/*   Updated: 2025/12/14 15:16:52 by nograu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,9 @@ int	main(int argc, char **argv)
 	int		i;
 	v_list	*a;
 	v_list	*b;
+	//v_list		*b;
 	v_list	*current;
+	v_list	*current2;
 
 	a = NULL;
 	b = NULL;
@@ -36,7 +38,7 @@ int	main(int argc, char **argv)
 	// if () // arguments not integer, arg exceeds integer limits, duplicates int
 	// 	write(0, "Error", 5);
 	while (i < argc)
-		ps_lstadd_back(&a, ps_lstnew(ft_atoi(argv[i++])));
+		ps_lstadd_back(&b, ps_lstnew(ft_atoi(argv[i++])));
 	//push_swap(a_stack);
 	current = a;
 	printf("\nOriginal a_stack: \n");
@@ -46,8 +48,12 @@ int	main(int argc, char **argv)
 		current = current->next;
 	}
 
-	sa(&a);
+	//sa(&a);
+	//sb(&b);
 	//ss(&a, &b);
+	// pa(&a, &b);
+	// pb(&a, &b);
+	
 	
 	current = a;
 	printf("\nNew a_stack: \n");
@@ -57,6 +63,14 @@ int	main(int argc, char **argv)
 		current = current->next;
 	}
 	
+	current2 = b;
+	printf("\nNew a_stack: \n");
+	while (current2 != NULL)
+	{
+		printf("%d\n", current2->nb);
+		current2 = current2->next;
+	}
+
 	return (0);
 }
 

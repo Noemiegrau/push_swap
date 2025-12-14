@@ -6,7 +6,7 @@
 /*   By: nograu <nograu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 15:04:22 by nograu            #+#    #+#             */
-/*   Updated: 2025/12/13 18:37:26 by nograu           ###   ########.fr       */
+/*   Updated: 2025/12/14 15:14:31 by nograu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,12 @@ int	ps_lstsize(v_list *lst)
 		current = current->next;
 	}
 	return (i);
+}
+
+void	ps_lstadd_front(v_list **lst, v_list *new)
+{
+	if (!lst || !new)
+		return ;
+	new->next = *lst;
+	*lst = new;
 }

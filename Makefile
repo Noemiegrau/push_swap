@@ -6,13 +6,13 @@
 #    By: nograu <nograu@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/11 17:04:28 by nograu            #+#    #+#              #
-#    Updated: 2025/12/13 16:23:04 by nograu           ###   ########.fr        #
+#    Updated: 2025/12/14 11:48:37 by nograu           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	push_swap
 
-SRC	=	main.c push_swap.c linked_lists_utils.c swap_instructions.c 
+SRC	=	main.c linked_lists_utils.c swap_instructions.c 
 
 OBJ	=	$(SRC:.c=.o)
 
