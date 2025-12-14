@@ -6,7 +6,7 @@
 /*   By: nograu <nograu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 15:45:10 by nograu            #+#    #+#             */
-/*   Updated: 2025/12/14 15:24:33 by nograu           ###   ########.fr       */
+/*   Updated: 2025/12/14 18:01:11 by nograu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,19 +79,37 @@ void	pb(v_list **a, v_list **b)
 
 void	ra(v_list **a)
 {
-
+	v_list	*temp;
+	v_list	*last;
+	
+	if (!a || !*a || !(*a)->next)
+		return ;
+	temp = *a;
+	*a = (*a)->next;	
+	last = ps_lstlast(*a);
+	last->next = temp;
+	temp->next = NULL;
 }
 
-// void	rb(v_list **b)
-// {
+void	rb(v_list **b)
+{
+	v_list	*temp;
+	v_list	*last;
+	
+	if (!b || !*b || !(*b)->next)
+		return ;
+	temp = *b;
+	*b = (*b)->next;	
+	last = ps_lstlast(*b);
+	last->next = temp;
+	temp->next = NULL;
+}
 
-// }
-
-// void	rr(v_list **a, v_list **b)
-// {
-//	ra(*&a);
-//	rb(*&b);
-// }
+void	rr(v_list **a, v_list **b)
+{
+	ra(*&a);
+	rb(*&b);
+}
 
 // void	rra(v_list **a)
 // {
