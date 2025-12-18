@@ -6,7 +6,7 @@
 /*   By: nograu <nograu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 16:46:27 by nograu            #+#    #+#             */
-/*   Updated: 2025/12/14 18:36:51 by nograu           ###   ########.fr       */
+/*   Updated: 2025/12/18 15:33:22 by nograu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 //# include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <limits.h>
 //# include <stdint.h>
 
 // STRUCT
