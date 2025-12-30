@@ -6,7 +6,7 @@
 /*   By: nograu <nograu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/20 16:51:36 by nograu            #+#    #+#             */
-/*   Updated: 2025/12/30 16:18:46 by nograu           ###   ########.fr       */
+/*   Updated: 2025/12/30 16:53:04 by nograu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,9 @@ void	small_sorting(v_list **a, v_list **b)
 		write(1, "Unsuccessful\n",13);
 		return (0);
 	}
-	return (0);
 }
 
-int	sorting_two(v_list **a)
+void	sorting_two(v_list **a)
 {
 	v_list	*current;
 
@@ -67,10 +66,9 @@ int	sorting_two(v_list **a)
 	current = *a;
 	if (current->nb > current->next->nb)
 		sa(current);
-	return (0);
 }
 
-int	sorting_three(v_list **a)
+void	sorting_three(v_list **a)
 {
 	v_list	*current;
 	int		first;
@@ -95,24 +93,20 @@ int	sorting_three(v_list **a)
 		sa(&a);
 	else // 231
 		rra(&a);
-	return (0);
 }
 
-int	sorting_five(v_list **a, v_list **b)
+void	sorting_five(v_list **a, v_list **b)
 {
-	v_list	*current_a;
-	v_list	*current_b;
+	int	size;
+	int	min_index;
 
-	if (!a || !*a)
-		return (0);
-	current_a = *a;
-	current_b = *b;
-
+	size = ps_lstsize(*a); // 4 ou 5
+	while (ps_lstsize(*a) > 3)
 	// 2 plus petit element de a dans b
 	
 	// sorting_three
 	sorting_three(&a);
 	// 2 elements de b dans a
-	while (current_b) // while (current_b->next != NULL) // maybe
-	return (0);
+	while (*b) // while ((*b)->next != NULL) ??
+		pa(&a, &b);
 }
