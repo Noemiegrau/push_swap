@@ -6,7 +6,7 @@
 /*   By: nograu <nograu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/20 16:51:36 by nograu            #+#    #+#             */
-/*   Updated: 2025/12/30 16:10:12 by nograu           ###   ########.fr       */
+/*   Updated: 2025/12/30 16:18:46 by nograu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +113,6 @@ int	sorting_five(v_list **a, v_list **b)
 	// sorting_three
 	sorting_three(&a);
 	// 2 elements de b dans a
-	while (current_b) // while (current_b->next != NULL)
-		pa(&a, &b);
+	while (current_b) // while (current_b->next != NULL) // maybe
 	return (0);
 }
