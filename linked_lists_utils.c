@@ -6,7 +6,7 @@
 /*   By: nograu <nograu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 15:04:22 by nograu            #+#    #+#             */
-/*   Updated: 2025/12/14 15:58:29 by nograu           ###   ########.fr       */
+/*   Updated: 2025/12/20 16:52:29 by nograu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,22 +53,22 @@ v_list	*ps_lstlast(v_list *lst)
 	return (current);
 }
 
-// int	ps_lstsize(v_list *lst)
-// {
-// 	v_list	*current;
-// 	int		i;
+int	ps_lstsize(v_list *lst)
+{
+	v_list	*current;
+	int		i;
 
-// 	i = 0;
-// 	current = lst;
-// 	if (!lst)
-// 		return (0);
-// 	while (current != NULL)
-// 	{
-// 		i++;
-// 		current = current->next;
-// 	}
-// 	return (i);
-// }
+	i = 0;
+	current = lst;
+	if (!lst)
+		return (0);
+	while (current != NULL)
+	{
+		i++;
+		current = current->next;
+	}
+	return (i);
+}
 
 // void	ps_lstadd_front(v_list **lst, v_list *new)
 // {
