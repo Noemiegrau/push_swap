@@ -6,18 +6,17 @@
 /*   By: nograu <nograu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/20 16:51:36 by nograu            #+#    #+#             */
-/*   Updated: 2025/12/31 15:16:11 by nograu           ###   ########.fr       */
+/*   Updated: 2025/12/31 18:02:08 by nograu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-//#include "./libft/libft.h"
 
 #include <stdio.h> // to suppr later
 
-int	is_sorted(v_list **a)
+int	is_sorted(t_list **a)
 {
-	v_list	*current;
+	t_list	*current;
 
 	if (!a || !*a)
 		return (0);
@@ -31,9 +30,11 @@ int	is_sorted(v_list **a)
 	return (0);
 }
 
-void	small_sorting(v_list **a, v_list **b)
-//void	small_sorting(v_list **a)
+void	small_sorting(t_list **a, t_list **b)
+//void	small_sorting(t_list **a)
 {
+	if (!a || !*a) // A METTRE DANS TOUTES MES FONCTIONS ?? OU PAS ??
+		return ;
 	if (!(is_sorted(a)))
 	{
 		write(1, "Success: Was already sorted\n", 28);
@@ -67,9 +68,9 @@ void	small_sorting(v_list **a, v_list **b)
 			(*a) = (*a)->next;
 		}
 	}
-	else if (ps_lstsize(&a) == 4 || ps_lstsize(&a) == 5)
+	else if (ps_lstsize(*a) == 4 || ps_lstsize(*a) == 5)
 	{
-		sorting_five(&a, &b);
+		sorting_five(a, b);
 		write(1, "Success: Sorted 5\n", 18);
 		printf("A list is now:\n");
 		while (*a)
@@ -85,9 +86,9 @@ void	small_sorting(v_list **a, v_list **b)
 	}
 }
 
-void	sorting_two(v_list **a)
+void	sorting_two(t_list **a)
 {
-	v_list	*current;
+	t_list	*current;
 
 	if (!a || !*a)
 		return ;
@@ -96,46 +97,49 @@ void	sorting_two(v_list **a)
 		sa(&current);
 }
 
-void	sorting_three(v_list **a)
+void	sorting_three(t_list **a)
 {
-	int		first;
-	int		second;
-	int		third;
+	int		f;
+	int		s;
+	int		t;
 
-	if (!a || !*a)
+	if (!a || !*a) // A METTRE DANS TOUTES MES FONCTIONS ?? OU PAS ??
 		return ;
-	first = (*a)->nb;
-	second = (*a)->next->nb;
-	third = (*a)->next->next->nb;
-	if (first > second && second > third) // 321
+	f = (*a)->nb;
+	s = (*a)->next->nb;
+	t = (*a)->next->next->nb;
+	if (f > s && s > t && f > t) // 321
 	{
 		sa(a);
 		rra(a);
 	}
-	else if (first > second && second < third) // 213
+	else if (f > s && s < t && f < t) // 213
 		sa(a);
-	else if (first < second && second > third) // 132
+	else if (f < s && s > t && f < t) // 132
 	{
 		sa(a);
 		ra(a);
 	}
-	else if (first > second && second < third) // 312
-		sa(a);
-	else // 231
+	else if (f > s && s < t && f > t) // 312
+		ra(a);
+	else if (f < s && s > t && f > t)// 231
 		rra(a);
 }
 
-void	sorting_five(v_list **a, v_list **b)
+void	sorting_five(t_list **a, t_list **b)
 {
-	int	size;
-	int	min_index;
-
-	size = ps_lstsize(*a); // 4 ou 5
-	while (ps_lstsize(*a) > 3)
-	// 2 plus petit element de a dans b
-	// sorting_three
-	sorting_three(&a);
-	// 2 elements de b dans a
-	while (*b) // while ((*b)->next != NULL) ??
-		pa(&a, &b);
+	if (!a || !*a) // A METTRE DANS TOUTES MES FONCTIONS ?? OU PAS ??
+		return ;
+	smallest_up(a);
+	pb(a, b);
+	if (ps_lstsize(*a) == 4)
+	{
+		smallest_up(a);
+		pb(a, b);
+	}
+	sorting_three(a);
+	if (ps_lstsize(*b) == 2 && (*b)->nb < (*b)->next->nb)
+		sb(b);
+	pa(a, b);
+	pa(a, b);
 }

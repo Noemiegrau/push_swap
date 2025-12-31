@@ -6,17 +6,17 @@
 /*   By: nograu <nograu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 15:04:22 by nograu            #+#    #+#             */
-/*   Updated: 2025/12/20 16:52:29 by nograu           ###   ########.fr       */
+/*   Updated: 2025/12/31 16:07:39 by nograu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-v_list	*ps_lstnew(int nb)
+t_list	*ps_lstnew(int nb)
 {
-	v_list	*new_node;
+	t_list	*new_node;
 
-	new_node = (v_list *)malloc(sizeof(v_list));
+	new_node = (t_list *)malloc(sizeof(t_list));
 	if (!new_node)
 		return (NULL);
 	new_node->nb = nb;
@@ -24,9 +24,9 @@ v_list	*ps_lstnew(int nb)
 	return (new_node);
 }
 
-void	ps_lstadd_back(v_list **lst, v_list *new)
+void	ps_lstadd_back(t_list **lst, t_list *new)
 {
-	v_list	*last;
+	t_list	*last;
 
 	if (!lst || !new)
 		return ;
@@ -41,9 +41,9 @@ void	ps_lstadd_back(v_list **lst, v_list *new)
 	last->next = new;
 }
 
-v_list	*ps_lstlast(v_list *lst)
+t_list	*ps_lstlast(t_list *lst)
 {
-	v_list	*current;
+	t_list	*current;
 
 	if (!lst)
 		return (NULL);
@@ -53,9 +53,9 @@ v_list	*ps_lstlast(v_list *lst)
 	return (current);
 }
 
-int	ps_lstsize(v_list *lst)
+int	ps_lstsize(t_list *lst)
 {
-	v_list	*current;
+	t_list	*current;
 	int		i;
 
 	i = 0;
@@ -70,7 +70,7 @@ int	ps_lstsize(v_list *lst)
 	return (i);
 }
 
-// void	ps_lstadd_front(v_list **lst, v_list *new)
+// void	ps_lstadd_front(t_list **lst, t_list *new)
 // {
 // 	if (!lst || !new)
 // 		return ;

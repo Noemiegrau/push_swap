@@ -6,17 +6,16 @@
 /*   By: nograu <nograu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 15:45:10 by nograu            #+#    #+#             */
-/*   Updated: 2025/12/31 15:15:35 by nograu           ###   ########.fr       */
+/*   Updated: 2025/12/31 18:02:13 by nograu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-//#include "./libft/libft.h"
 
-void	rra(v_list **a)
+void	rra(t_list **a)
 {
-	v_list	*last;
-	v_list	*second_to_last;
+	t_list	*last;
+	t_list	*second_to_last;
 
 	if (!a || !*a || !(*a)->next)
 		return ;
@@ -29,10 +28,10 @@ void	rra(v_list **a)
 	*a = last;
 }
 
-void	rrb(v_list **b)
+void	rrb(t_list **b)
 {
-	v_list	*last;
-	v_list	*second_to_last;
+	t_list	*last;
+	t_list	*second_to_last;
 
 	if (!b || !*b || !(*b)->next)
 		return ;
@@ -45,7 +44,7 @@ void	rrb(v_list **b)
 	*b = last;
 }
 
-void	rrr(v_list **a, v_list **b)
+void	rrr(t_list **a, t_list **b)
 {
 	rra(*&a);
 	rrb(*&b);

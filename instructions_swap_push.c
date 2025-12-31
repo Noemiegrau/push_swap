@@ -6,14 +6,13 @@
 /*   By: nograu <nograu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 15:45:10 by nograu            #+#    #+#             */
-/*   Updated: 2025/12/31 15:15:50 by nograu           ###   ########.fr       */
+/*   Updated: 2025/12/31 18:02:18 by nograu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-//#include "./libft/libft.h"
 
-void	sa(v_list **a)
+void	sa(t_list **a)
 {
 	int		temp;
 
@@ -22,8 +21,8 @@ void	sa(v_list **a)
 	temp = (*a)->next->nb;
 	(*a)->next->nb = (*a)->nb;
 	(*a)->nb = temp;
-	// v_list	*temp;
-	// v_list	*second;
+	// t_list	*temp;
+	// t_list	*second;
 	// temp = *a; // sauvegarde du premier noeud dans temp
 	// second = (*a)->next; // initialisation du deuxieme noeud, *a pointe sur lui
 	// temp->next = second->next; // dans le next de temp on met le next qu'il y avait dans second, le 1er pointe sur le 3e
@@ -31,10 +30,10 @@ void	sa(v_list **a)
 	// *a = second; // head devient le deuxieme
 }
 
-void	sb(v_list **b)
+void	sb(t_list **b)
 {
-	v_list	*temp;
-	v_list	*second;
+	t_list	*temp;
+	t_list	*second;
 
 	if (!b || !*b || !(*b)->next)
 		return ;
@@ -45,15 +44,15 @@ void	sb(v_list **b)
 	*b = second;
 }
 
-void	ss(v_list **a, v_list **b)
+void	ss(t_list **a, t_list **b)
 {
 	sa(*&a);
 	sb(*&b);
 }
 
-void	pa(v_list **a, v_list **b)
+void	pa(t_list **a, t_list **b)
 {
-	v_list	*temp;
+	t_list	*temp;
 
 	if (!b || !*b)
 		return ;
@@ -63,9 +62,9 @@ void	pa(v_list **a, v_list **b)
 	*a = temp; // temp est place en premier noeud dans a, le head de a pointe mtn sur temp
 }
 
-void	pb(v_list **a, v_list **b)
+void	pb(t_list **a, t_list **b)
 {
-	v_list	*temp;
+	t_list	*temp;
 
 	if (!a || !*a)
 		return ;

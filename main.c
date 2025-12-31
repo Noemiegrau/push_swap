@@ -6,12 +6,11 @@
 /*   By: nograu <nograu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 15:01:24 by nograu            #+#    #+#             */
-/*   Updated: 2025/12/31 15:18:23 by nograu           ###   ########.fr       */
+/*   Updated: 2025/12/31 18:01:59 by nograu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-//#include "./libft/libft.h"
 
 #include <stdio.h> // a supprimer
 #include <string.h>
@@ -107,8 +106,8 @@ int	is_valid_num(int argc, char **argv)
 int	main(int argc, char **argv)
 {
 	int		i;
-	v_list	*a;
-	v_list	*b;
+	t_list	*a;
+	t_list	*b;
 
 	a = NULL;
 	b = NULL;
