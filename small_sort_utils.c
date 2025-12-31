@@ -6,12 +6,14 @@
 /*   By: nograu <nograu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/20 16:51:36 by nograu            #+#    #+#             */
-/*   Updated: 2025/12/30 16:53:04 by nograu           ###   ########.fr       */
+/*   Updated: 2025/12/31 13:27:50 by nograu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "./libft/libft.h"
+
+#include <stdio.h> // to suppr later
 
 int	is_sorted(v_list **a)
 {
@@ -29,31 +31,56 @@ int	is_sorted(v_list **a)
 	return (0);
 }
 void	small_sorting(v_list **a, v_list **b)
+//void	small_sorting(v_list **a)
 {
-	if (is_sorted(&a))
+	if (!(is_sorted(a)))
 	{
 		write(1, "Success: Was already sorted\n", 28);
-		return (0);
+		printf("A list is now:\n");
+		while (*a)
+		{
+			printf("%d\n", (*a)->nb);
+			(*a) = (*a)->next;
+		}
+		return ;
 	}
-	else if (ps_lstsize(&a) == 2)
+	else if (ps_lstsize(*a) == 2)
 	{
-		sorting_two(&a);
+		sorting_two(a);
 		write(1, "Success: Sorted 2\n", 18);
+		printf("A list is now:\n");
+		while (*a)
+		{
+			printf("%d\n", (*a)->nb);
+			(*a) = (*a)->next;
+		}
 	}
-	else if (ps_lstsize(&a) == 3)
+	else if (ps_lstsize(*a) == 3)
 	{
-		sorting_three(&a);
+		sorting_three(a);
 		write(1, "Success: Sorted 3\n", 18);
+		printf("A list is now:\n");
+		while (*a)
+		{
+			printf("%d\n", (*a)->nb);
+			(*a) = (*a)->next;
+		}
 	}
-	else if (ps_lstsize(&a) == 4 || ps_lstsize(&a) == 5) // et 4 aussi ?
+	else if (ps_lstsize(&a) == 4 || ps_lstsize(&a) == 5)
 	{
 		sorting_five(&a, &b);
 		write(1, "Success: Sorted 5\n", 18);
+		printf("A list is now:\n");
+		while (*a)
+		{
+			printf("%d\n", (*a)->nb);
+			(*a) = (*a)->next;
+		}
 	}
 	else  // big algo
 	{
 		write(1, "Unsuccessful\n",13);
-		return (0);
+		return ;
 	}
 }
 
@@ -62,37 +89,39 @@ void	sorting_two(v_list **a)
 	v_list	*current;
 
 	if (!a || !*a)
-		return (0);
+		return ;
 	current = *a;
 	if (current->nb > current->next->nb)
-		sa(current);
+		sa(&current);
 }
 
 void	sorting_three(v_list **a)
 {
-	v_list	*current;
 	int		first;
 	int		second;
 	int		third;
 
 	if (!a || !*a)
-		return (0);
-	current = *a;
-	first = current->nb;
-	second = current->next->nb;
-	third = current->next->next->nb;
+		return ;
+	first = (*a)->nb;
+	second = (*a)->next->nb;
+	third = (*a)->next->next->nb;
 	if (first > second && second > third) // 321
-		sa(&a);
-		rra(&a);
-	if (first > second && second < third) // 213
-		sa(&a);
-	if (first < second && second > third) // 132
-		sa(&a);
-		ra(&a);
-	if (first > second && second < third) // 312
-		sa(&a);
+	{
+		sa(a);
+		rra(a);
+	}
+	else if (first > second && second < third) // 213
+		sa(a);
+	else if (first < second && second > third) // 132
+	{
+		sa(a);
+		ra(a);
+	}
+	else if (first > second && second < third) // 312
+		sa(a);
 	else // 231
-		rra(&a);
+		rra(a);
 }
 
 void	sorting_five(v_list **a, v_list **b)

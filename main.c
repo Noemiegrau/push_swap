@@ -6,7 +6,7 @@
 /*   By: nograu <nograu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 15:01:24 by nograu            #+#    #+#             */
-/*   Updated: 2025/12/30 16:30:46 by nograu           ###   ########.fr       */
+/*   Updated: 2025/12/31 13:27:59 by nograu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,6 +123,7 @@ int	main(int argc, char **argv)
 	while (i < argc)
 		ps_lstadd_back(&a, ps_lstnew((int)ft_atoi_long(argv[i++])));
 	small_sorting(&a, &b);
+	//small_sorting(&a);  // to suppr later
 	// if (is_sorted(&a))
 	// {
 	// 	write(1, "Success: Was already sorted\n", 28);
