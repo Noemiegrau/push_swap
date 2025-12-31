@@ -6,12 +6,12 @@
 /*   By: nograu <nograu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 15:45:10 by nograu            #+#    #+#             */
-/*   Updated: 2025/12/14 18:35:49 by nograu           ###   ########.fr       */
+/*   Updated: 2025/12/31 15:15:35 by nograu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "./libft/libft.h"
+//#include "./libft/libft.h"
 
 void	rra(v_list **a)
 {

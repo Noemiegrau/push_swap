@@ -6,12 +6,12 @@
 /*   By: nograu <nograu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/20 16:51:36 by nograu            #+#    #+#             */
-/*   Updated: 2025/12/31 13:27:50 by nograu           ###   ########.fr       */
+/*   Updated: 2025/12/31 15:16:11 by nograu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "./libft/libft.h"
+//#include "./libft/libft.h"
 
 #include <stdio.h> // to suppr later
 
@@ -30,6 +30,7 @@ int	is_sorted(v_list **a)
 	}
 	return (0);
 }
+
 void	small_sorting(v_list **a, v_list **b)
 //void	small_sorting(v_list **a)
 {
@@ -77,9 +78,9 @@ void	small_sorting(v_list **a, v_list **b)
 			(*a) = (*a)->next;
 		}
 	}
-	else  // big algo
+	else// big algo
 	{
-		write(1, "Unsuccessful\n",13);
+		write(1, "Unsuccessful\n", 13);
 		return ;
 	}
 }
@@ -132,7 +133,6 @@ void	sorting_five(v_list **a, v_list **b)
 	size = ps_lstsize(*a); // 4 ou 5
 	while (ps_lstsize(*a) > 3)
 	// 2 plus petit element de a dans b
-	
 	// sorting_three
 	sorting_three(&a);
 	// 2 elements de b dans a

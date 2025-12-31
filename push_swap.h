@@ -6,7 +6,7 @@
 /*   By: nograu <nograu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 16:46:27 by nograu            #+#    #+#             */
-/*   Updated: 2025/12/31 13:28:09 by nograu           ###   ########.fr       */
+/*   Updated: 2025/12/31 13:55:13 by nograu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,9 @@ void	rrr(v_list **a, v_list **b);
 int		is_sorted(v_list **a);
 void	small_sorting(v_list **a, v_list **b); // to suppr later
 //void	small_sorting(v_list **a);
-void		sorting_two(v_list **a);
-void		sorting_three(v_list **a);
-void		sorting_five(v_list **a, v_list **b);
+void	sorting_two(v_list **a);
+void	sorting_three(v_list **a);
+void	sorting_five(v_list **a, v_list **b);
 int		smallest_num(v_list *a);
 
 #endif

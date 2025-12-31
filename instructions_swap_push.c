@@ -6,12 +6,12 @@
 /*   By: nograu <nograu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 15:45:10 by nograu            #+#    #+#             */
-/*   Updated: 2025/12/14 18:11:35 by nograu           ###   ########.fr       */
+/*   Updated: 2025/12/31 15:15:50 by nograu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "./libft/libft.h"
+//#include "./libft/libft.h"
 
 void	sa(v_list **a)
 {
@@ -54,7 +54,7 @@ void	ss(v_list **a, v_list **b)
 void	pa(v_list **a, v_list **b)
 {
 	v_list	*temp;
-	
+
 	if (!b || !*b)
 		return ;
 	temp = *b; // sauvegarde le 1er noeud de b dans temp
@@ -72,5 +72,5 @@ void	pb(v_list **a, v_list **b)
 	temp = *a;
 	*a = (*a)->next;
 	temp->next = *b;
-	*b = temp; 
+	*b = temp;
 }

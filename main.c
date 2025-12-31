@@ -6,17 +6,17 @@
 /*   By: nograu <nograu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 15:01:24 by nograu            #+#    #+#             */
-/*   Updated: 2025/12/31 13:27:59 by nograu           ###   ########.fr       */
+/*   Updated: 2025/12/31 15:18:23 by nograu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "./libft/libft.h"
+//#include "./libft/libft.h"
 
 #include <stdio.h> // a supprimer
 #include <string.h>
 
-long ft_atoi_long(const char *nptr)
+long	ft_atoi_long(const char *nptr)
 {
 	int		i;
 	int		sign;
@@ -62,7 +62,7 @@ int	is_dup(int argc, char **argv)
 }
 
 int	is_over(int argc, char **argv)
-{ 
+{
 	long	n;
 	int		i;
 
@@ -76,6 +76,7 @@ int	is_over(int argc, char **argv)
 	}
 	return (0);
 }
+
 int	is_valid_num(int argc, char **argv)
 {
 	int	i;
@@ -124,30 +125,5 @@ int	main(int argc, char **argv)
 		ps_lstadd_back(&a, ps_lstnew((int)ft_atoi_long(argv[i++])));
 	small_sorting(&a, &b);
 	//small_sorting(&a);  // to suppr later
-	// if (is_sorted(&a))
-	// {
-	// 	write(1, "Success: Was already sorted\n", 28);
-	// 	return (0);
-	// }
-	// else if (ps_lstsize(&a) == 2)
-	// {
-	// 	sorting_two(&a);
-	// 	write(1, "Success: Sorted 2\n", 18);
-	// }
-	// else if (ps_lstsize(&a) == 3)
-	// {
-	// 	sorting_three(&a);
-	// 	write(1, "Success: Sorted 3\n", 18);
-	// }
-	// else if (ps_lstsize(&a) == 4 || ps_lstsize(&a) == 5) // et 4 aussi ?
-	// {
-	// 	sorting_five(&a);
-	// 	write(1, "Success: Sorted 5\n", 18);
-	// }
-	// else  // big algo
-	// {
-	// 	write(1, "Unsuccessful\n",13);
-	// 	return (0);
-	// }
 	return (0);
 }
