@@ -6,7 +6,7 @@
 /*   By: nograu <nograu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/20 16:51:36 by nograu            #+#    #+#             */
-/*   Updated: 2026/01/03 16:24:32 by nograu           ###   ########.fr       */
+/*   Updated: 2026/01/03 17:06:35 by nograu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ int	is_sorted(t_list **a)
 }
 
 void	small_sorting(t_list **a, t_list **b)
-//void	small_sorting(t_list **a)
 {
 	if (!a || !*a) // A METTRE DANS TOUTES MES FONCTIONS ?? OU PAS ??
 		return ;
@@ -103,7 +102,7 @@ void	sorting_three(t_list **a)
 	int		s;
 	int		t;
 
-	if (!a || !*a) // A METTRE DANS TOUTES MES FONCTIONS ?? OU PAS ??
+	if (!a || !*a)
 		return ;
 	f = (*a)->nb;
 	s = (*a)->next->nb;
@@ -128,7 +127,7 @@ void	sorting_three(t_list **a)
 
 void	sorting_five(t_list **a, t_list **b)
 {
-	if (!a || !*a) // A METTRE DANS TOUTES MES FONCTIONS ?? OU PAS ??
+	if (!a || !*a)
 		return ;
 	smallest_up(a);
 	pb(a, b);

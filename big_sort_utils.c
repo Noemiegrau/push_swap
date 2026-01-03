@@ -6,7 +6,7 @@
 /*   By: nograu <nograu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/03 14:12:44 by nograu            #+#    #+#             */
-/*   Updated: 2026/01/03 17:03:32 by nograu           ###   ########.fr       */
+/*   Updated: 2026/01/03 17:06:57 by nograu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <stdio.h> // to suppr later
 
 
-void	bubble_sort(int *tab, int size)  // add to .h
+void	bubble_sort(int *tab, int size)
 {
 	int	i;
 	int	j;
@@ -39,7 +39,7 @@ void	bubble_sort(int *tab, int size)  // add to .h
 	}
 }
 
-void	nbr_to_index(t_list **a) // a changer de fichier (big_sort ?) // add to .h
+void	nbr_to_index(t_list **a) // a changer de fichier (big_sort ?)
 {
 	t_list *current;
 	int	*tmp;
@@ -57,7 +57,7 @@ void	nbr_to_index(t_list **a) // a changer de fichier (big_sort ?) // add to .h
 		i++;
 	}
 	bubble_sort(tmp, ps_lstsize(a));
-// 4. chercher la position ds tmp de chaque elements de a (index) et remplacer le nbr par cet index (ajouter un element dans ma structure ??? perte du nb...)
+// 4. remplacer le nbr par cet index (ajouter un element dans ma structure ??? perte du nb...)
 	current = a;
 	while (current)
 	{
@@ -76,4 +76,6 @@ void	nbr_to_index(t_list **a) // a changer de fichier (big_sort ?) // add to .h
 	free(tmp);
 }
 
-
+// A METTRE SUR CES FONCTIONS OU PAS ???
+//	if (!a || !*a)
+//		return ;
