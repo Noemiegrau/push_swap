@@ -6,7 +6,7 @@
 #    By: nograu <nograu@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/11 17:04:28 by nograu            #+#    #+#              #
-#    Updated: 2025/12/30 15:28:07 by nograu           ###   ########.fr        #
+#    Updated: 2026/01/03 14:13:12 by nograu           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,10 @@ SRC			=	main.c \
 				instructions_reverse.c \
 				instructions_rotate.c \
 				instructions_swap_push.c \
-				small_sort_utils.c
+				small_sort.c \
+				small_sort_utils.c \
+				big_sort.c \
+				big_sort_utils.c 
 
 OBJ			=	$(SRC:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: nograu <nograu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 15:01:24 by nograu            #+#    #+#             */
-/*   Updated: 2025/12/31 18:01:59 by nograu           ###   ########.fr       */
+/*   Updated: 2026/01/03 16:33:42 by nograu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,6 +123,6 @@ int	main(int argc, char **argv)
 	while (i < argc)
 		ps_lstadd_back(&a, ps_lstnew((int)ft_atoi_long(argv[i++])));
 	small_sorting(&a, &b);
-	//small_sorting(&a);  // to suppr later
+	//put big algo function here
 	return (0);
 }

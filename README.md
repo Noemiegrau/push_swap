@@ -166,6 +166,10 @@ Big-O notation and sorting algorithms
 
 Linked lists manipulation in C
 
+- Links:
+https://codeur-pro.fr/binaire/
+
+
 ### AI usage
 
 AI tools were used as learning support only, mainly for:
