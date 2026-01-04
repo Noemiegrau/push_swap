@@ -6,7 +6,7 @@
 /*   By: nograu <nograu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 15:04:22 by nograu            #+#    #+#             */
-/*   Updated: 2025/12/31 16:07:39 by nograu           ###   ########.fr       */
+/*   Updated: 2026/01/04 16:20:47 by nograu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ t_list	*ps_lstnew(int nb)
 	if (!new_node)
 		return (NULL);
 	new_node->nb = nb;
+	new_node->index = -1;
 	new_node->next = NULL;
 	return (new_node);
 }
@@ -69,11 +70,3 @@ int	ps_lstsize(t_list *lst)
 	}
 	return (i);
 }
-
-// void	ps_lstadd_front(t_list **lst, t_list *new)
-// {
-// 	if (!lst || !new)
-// 		return ;
-// 	new->next = *lst;
-// 	*lst = new;
-// }

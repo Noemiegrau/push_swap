@@ -6,7 +6,7 @@
 /*   By: nograu <nograu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 15:45:10 by nograu            #+#    #+#             */
-/*   Updated: 2025/12/31 18:02:18 by nograu           ###   ########.fr       */
+/*   Updated: 2026/01/04 16:14:54 by nograu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,34 +14,36 @@
 
 void	sa(t_list **a)
 {
-	int		temp;
+	int		temp_nb;
+	int		temp_index;
 
 	if (!a || !*a || !(*a)->next)
 		return ;
-	temp = (*a)->next->nb;
+	temp_nb = (*a)->next->nb;
+	
 	(*a)->next->nb = (*a)->nb;
-	(*a)->nb = temp;
-	// t_list	*temp;
-	// t_list	*second;
-	// temp = *a; // sauvegarde du premier noeud dans temp
-	// second = (*a)->next; // initialisation du deuxieme noeud, *a pointe sur lui
-	// temp->next = second->next; // dans le next de temp on met le next qu'il y avait dans second, le 1er pointe sur le 3e
-	// second->next = temp; // deuxieme pointe sur le premier
-	// *a = second; // head devient le deuxieme
+	(*a)->nb = temp_nb;
+
+	temp_index = (*a)->next->index;
+	(*a)->next->index = (*a)->index;
+	(*a)->index = temp_index;
 }
 
 void	sb(t_list **b)
 {
-	t_list	*temp;
-	t_list	*second;
+	int		temp_nb;
+	int		temp_index;
 
 	if (!b || !*b || !(*b)->next)
 		return ;
-	temp = *b;
-	second = (*b)->next;
-	temp->next = second->next;
-	second->next = temp;
-	*b = second;
+
+	temp_nb = (*b)->next->nb;
+	(*b)->next->nb = (*b)->nb;
+	(*b)->nb = temp_nb;
+
+	temp_index = (*b)->next->index;
+	(*b)->next->index = (*b)->index;
+	(*b)->index = temp_index;
 }
 
 void	ss(t_list **a, t_list **b)
@@ -56,8 +58,8 @@ void	pa(t_list **a, t_list **b)
 
 	if (!b || !*b)
 		return ;
-	temp = *b; // sauvegarde le 1er noeud de b dans temp
-	*b = (*b)->next; // avance le head de b sur le deuxieme pointeur pour pas couper la chaine
+	temp = *b;
+	*b = (*b)->next; // avance le head de b sur le deuxieme pointeur pour pas couper la chaine // mais du coup le noeud a 2 noeuds qui lui pointent dessus en meme temps ?
 	temp->next = *a; //le premier noeud de a devient le next du temp (noeud deplace)
 	*a = temp; // temp est place en premier noeud dans a, le head de a pointe mtn sur temp
 }

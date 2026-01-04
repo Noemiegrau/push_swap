@@ -6,7 +6,7 @@
 #    By: nograu <nograu@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/11 17:04:28 by nograu            #+#    #+#              #
-#    Updated: 2026/01/03 14:13:12 by nograu           ###   ########.fr        #
+#    Updated: 2026/01/04 17:27:05 by nograu           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,15 +36,16 @@ LIBFT		=	$(LIBFT_DIR)/libft.a
 # Sources & Object Files
 # =========================
 
-SRC			=	main.c \
+SRC			=	push_swap.c \
 				linked_lists_utils.c \
 				instructions_reverse.c \
 				instructions_rotate.c \
 				instructions_swap_push.c \
 				small_sort.c \
-				small_sort_utils.c \
-				big_sort.c \
-				big_sort_utils.c 
+				sorting.c \
+				big_sort_radix.c \
+				big_sort_utils.c \
+				parsing.c
 
 OBJ			=	$(SRC:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: nograu <nograu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/03 14:12:44 by nograu            #+#    #+#             */
-/*   Updated: 2026/01/03 17:06:57 by nograu           ###   ########.fr       */
+/*   Updated: 2026/01/04 17:31:27 by nograu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <stdio.h> // to suppr later
 
 
-void	bubble_sort(int *tab, int size)
+static void	bubble_sort(int *tab, int size)
 {
 	int	i;
 	int	j;
@@ -39,43 +39,40 @@ void	bubble_sort(int *tab, int size)
 	}
 }
 
-void	nbr_to_index(t_list **a) // a changer de fichier (big_sort ?)
+void	nbr_to_index(t_list **a)
 {
 	t_list *current;
-	int	*tmp;
+	int	*temp;
 	int	i;
 
-	tmp = malloc(sizeof(int) * ps_lstsize(a));
-	if (!tmp)
+	if (!a || !*a)
+		return ;
+	temp = malloc(sizeof(int) * ps_lstsize(*a));
+	if (!temp)
 		return ;
 	i = 0;
-	current = a;
-	while (current)
+	current = *a;
+	while (current) // on met les current->nb ds temp
 	{
-		tmp[i] = current->nb;
+		temp[i] = current->nb;
 		current = current->next;
 		i++;
 	}
-	bubble_sort(tmp, ps_lstsize(a));
-// 4. remplacer le nbr par cet index (ajouter un element dans ma structure ??? perte du nb...)
-	current = a;
+	bubble_sort(temp, ps_lstsize(*a)); // on met dans l'odre croissant temp[]
+	current = *a;
 	while (current)
 	{
 		i = 0;
-		while (i < ps_lstsize(a))
+		while (i < ps_lstsize(*a))
 		{
-			if (current->nb == tmp[i])
+			if (current->nb == temp[i])
 			{
-				current->nb = i;
+				current->index = i;
 				break;
 			}
 			i++;
 		}
 		current = current->next;
 	}
-	free(tmp);
+	free(temp);
 }
-
-// A METTRE SUR CES FONCTIONS OU PAS ???
-//	if (!a || !*a)
-//		return ;

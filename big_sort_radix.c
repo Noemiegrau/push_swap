@@ -6,7 +6,7 @@
 /*   By: nograu <nograu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/03 14:11:24 by nograu            #+#    #+#             */
-/*   Updated: 2026/01/03 14:12:16 by nograu           ###   ########.fr       */
+/*   Updated: 2026/01/04 17:20:24 by nograu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #include <stdio.h> // to suppr later
 
-void	small_sorting(t_list **a, t_list **b)
+void	big_sorting(t_list **a, t_list **b)
 {
 	
 }

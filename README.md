@@ -167,7 +167,13 @@ Big-O notation and sorting algorithms
 Linked lists manipulation in C
 
 - Links:
+BINARY
 https://codeur-pro.fr/binaire/
+RADIX SORT
+https://brilliant.org/wiki/radix-sort/
+https://www.youtube.com/watch?v=mVRHvZF8xtg
+https://www.youtube.com/watch?v=nu4gDuFabIM
+https://www.youtube.com/watch?v=4ungd6NXFYI
 
 
 ### AI usage
