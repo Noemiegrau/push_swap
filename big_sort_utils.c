@@ -6,14 +6,11 @@
 /*   By: nograu <nograu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/03 14:12:44 by nograu            #+#    #+#             */
-/*   Updated: 2026/01/04 17:31:27 by nograu           ###   ########.fr       */
+/*   Updated: 2026/01/04 18:46:34 by nograu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-#include <stdio.h> // to suppr later
-
 
 static void	bubble_sort(int *tab, int size)
 {

@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   big_sort.c                                         :+:      :+:    :+:   */
+/*   big_sort_radix.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nograu <nograu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/03 14:11:24 by nograu            #+#    #+#             */
-/*   Updated: 2026/01/04 17:20:24 by nograu           ###   ########.fr       */
+/*   Updated: 2026/01/04 18:20:13 by nograu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-#include <stdio.h> // to suppr later
-
-void	big_sorting(t_list **a, t_list **b)
-{
+// void	big_sorting(t_list **a, t_list **b)
+// {
 	
-}
+// }
