@@ -6,7 +6,7 @@
 /*   By: nograu <nograu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 17:24:34 by nograu            #+#    #+#             */
-/*   Updated: 2026/01/04 17:25:11 by nograu           ###   ########.fr       */
+/*   Updated: 2026/01/04 20:19:11 by nograu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,13 +83,10 @@ int	is_valid_num(int argc, char **argv)
 	while (i < argc)
 	{
 		j = 0;
-		// Le premier caractère peut être +, - ou un chiffre
 		if (argv[i][j] == '+' || argv[i][j] == '-')
 			j++;
-		// Après le signe, il doit y avoir au moins un chiffre
 		if (!argv[i][j])
 			return (write(2, "Error\n", 6), 1);
-		// Tous les caractères restants doivent être des chiffres
 		while (argv[i][j])
 		{
 			if (!(argv[i][j] >= '0' && argv[i][j] <= '9'))

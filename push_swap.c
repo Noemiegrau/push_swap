@@ -6,23 +6,11 @@
 /*   By: nograu <nograu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 15:01:24 by nograu            #+#    #+#             */
-/*   Updated: 2026/01/04 18:48:09 by nograu           ###   ########.fr       */
+/*   Updated: 2026/01/04 22:24:26 by nograu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-static void	free_list(t_list **lst)
-{
-	t_list	*temp;
-
-	while (*lst)
-	{
-		temp = (*lst)->next;
-		free(*lst);
-		*lst = temp;
-	}
-}
 
 int	main(int argc, char **argv)
 {
@@ -36,16 +24,16 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		return (0);
 	if (is_valid_num(argc, argv) != 0)
-		return (free_list(&a), 1);
+		return (ft_lstclear(&a), 1);
 	if (is_over(argc, argv) != 0)
-		return (free_list(&a), 1);
+		return (ft_lstclear(&a), 1);
 	if (is_dup(argc, argv) != 0)
-		return (free_list(&a), 1);
+		return (ft_lstclear(&a), 1);
 	while (i < argc)
 		ps_lstadd_back(&a, ps_lstnew((int)ft_atoi_long(argv[i++])));
-	nbr_to_index(&a);
+	find_index(&a);
 	sorting(&a, &b);
-	free_list(&a);
-	free_list(&b);
+	ft_lstclear(&a);
+	ft_lstclear(&b);
 	return (0);
 }

@@ -6,18 +6,26 @@
 /*   By: nograu <nograu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/03 14:12:44 by nograu            #+#    #+#             */
-/*   Updated: 2026/01/04 18:46:34 by nograu           ###   ########.fr       */
+/*   Updated: 2026/01/04 22:24:50 by nograu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+static void	ft_swap(int	*a, int	*b)
+{
+	int	temp;
+	
+	temp = *a;
+	*a = *b;
+	*b = temp;
+}
+
 static void	bubble_sort(int *tab, int size)
 {
 	int	i;
 	int	j;
-	int	tmp;
-	
+
 	i = 0;
 	while (i < size - 1)
 	{
@@ -25,37 +33,18 @@ static void	bubble_sort(int *tab, int size)
 		while (j < size - i - 1)
 		{
 			if (tab[j] > tab[j + 1])
-			{
-				tmp = tab[j];
-				tab[j] = tab[j + 1];
-				tab[j + 1] = tmp;
-			}
+				ft_swap(&tab[j], &tab[j + 1]);
 			j++;
 		}
 		i++;
 	}
 }
 
-void	nbr_to_index(t_list **a)
+static void	index_attribution(t_list **a, int *temp)
 {
-	t_list *current;
-	int	*temp;
-	int	i;
+	t_list	*current;
+	int		i;
 
-	if (!a || !*a)
-		return ;
-	temp = malloc(sizeof(int) * ps_lstsize(*a));
-	if (!temp)
-		return ;
-	i = 0;
-	current = *a;
-	while (current) // on met les current->nb ds temp
-	{
-		temp[i] = current->nb;
-		current = current->next;
-		i++;
-	}
-	bubble_sort(temp, ps_lstsize(*a)); // on met dans l'odre croissant temp[]
 	current = *a;
 	while (current)
 	{
@@ -65,11 +54,34 @@ void	nbr_to_index(t_list **a)
 			if (current->nb == temp[i])
 			{
 				current->index = i;
-				break;
+				break ;
 			}
 			i++;
 		}
 		current = current->next;
 	}
+}
+
+void	find_index(t_list **a)
+{
+	t_list	*current;
+	int		*temp;
+	int		i;
+
+	if (!a || !*a)
+		return ;
+	temp = malloc(sizeof(int) * ps_lstsize(*a));
+	if (!temp)
+		return ;
+	i = 0;
+	current = *a;
+	while (current)
+	{
+		temp[i] = current->nb;
+		current = current->next;
+		i++;
+	}
+	bubble_sort(temp, ps_lstsize(*a));
+	index_attribution(a, temp);
 	free(temp);
 }

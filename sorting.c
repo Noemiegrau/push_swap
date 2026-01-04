@@ -6,7 +6,7 @@
 /*   By: nograu <nograu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/20 16:51:36 by nograu            #+#    #+#             */
-/*   Updated: 2026/01/04 18:45:52 by nograu           ###   ########.fr       */
+/*   Updated: 2026/01/04 21:46:26 by nograu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	sorting(t_list **a, t_list **b)
 	{
 		write(1, "Success: Was already sorted\n", 28);// A SUPPR
 		printf("A list is now:\n");// A SUPPR
-		t_list *temp = *a; // A SUPPR
+		t_list	*temp = *a; // A SUPPR
 		while (temp)// A SUPPR
 		{// A SUPPR
 			printf("nb: %d\n", temp->nb);// A SUPPR
@@ -52,7 +52,7 @@ void	sorting(t_list **a, t_list **b)
 		sorting_two(a);
 		write(1, "Success: Sorted 2\n", 18);// A SUPPR
 		printf("A list is now:\n");// A SUPPR
-		t_list *temp = *a; // A SUPPR
+		t_list	*temp = *a; // A SUPPR
 		while (temp)// A SUPPR
 		{// A SUPPR
 			printf("nb: %d\n", temp->nb);// A SUPPR
@@ -65,7 +65,7 @@ void	sorting(t_list **a, t_list **b)
 		sorting_three(a);
 		write(1, "Success: Sorted 3\n", 18); // A SUPPR
 		printf("A list is now:\n");// A SUPPR
-		t_list *temp = *a; // A SUPPR
+		t_list	*temp = *a; // A SUPPR
 		while (temp)// A SUPPR
 		{// A SUPPR
 			printf("nb: %d\n", temp->nb);// A SUPPR
@@ -78,7 +78,7 @@ void	sorting(t_list **a, t_list **b)
 		sorting_five(a, b);
 		write(1, "Success: Sorted 5\n", 18);// A SUPPR
 		printf("A list is now:\n");// A SUPPR
-		t_list *temp = *a; // A SUPPR
+		t_list	*temp = *a; // A SUPPR
 		while (temp)// A SUPPR
 		{// A SUPPR
 			printf("nb: %d\n", temp->nb);// A SUPPR
@@ -88,7 +88,7 @@ void	sorting(t_list **a, t_list **b)
 	}
 	else
 	{
-		big_sorting(a, b);
+		//big_sorting(a, b);
 		write(1, "Success: Sorting big numbers\n", 29);
 		printf("A list is now:\n");// A SUPPR
 		t_list *temp = *a; // A SUPPR

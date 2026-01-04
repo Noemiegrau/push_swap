@@ -6,7 +6,7 @@
 /*   By: nograu <nograu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 16:46:27 by nograu            #+#    #+#             */
-/*   Updated: 2026/01/04 18:48:14 by nograu           ###   ########.fr       */
+/*   Updated: 2026/01/04 22:25:02 by nograu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ t_list	*ps_lstlast(t_list *lst);
 int		ps_lstsize(t_list *lst);
 void	ps_lstadd_back(t_list **lst, t_list *new);
 
-
 // ---------- STACK INSTRUCTIONS ---------- 
 
 void	sa(t_list **a);
@@ -65,7 +64,11 @@ void	sorting(t_list **a, t_list **b);
 void	sorting_two(t_list **a);
 void	sorting_three(t_list **a);
 void	sorting_five(t_list **a, t_list **b);
-void	nbr_to_index(t_list **a);
+void	find_index(t_list **a);
 void	big_sorting(t_list **a, t_list **b);
+
+// ---------- FREE ---------- 
+
+void	ft_lstclear(t_list **lst);
 
 #endif

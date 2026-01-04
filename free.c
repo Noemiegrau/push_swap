@@ -1,18 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   big_sort_radix.c                                   :+:      :+:    :+:   */
+/*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nograu <nograu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/03 14:11:24 by nograu            #+#    #+#             */
-/*   Updated: 2026/01/04 21:46:22 by nograu           ###   ########.fr       */
+/*   Created: 2026/01/04 18:53:18 by nograu            #+#    #+#             */
+/*   Updated: 2026/01/04 22:11:29 by nograu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// void	big_sorting(t_list **a, t_list **b)
-// {
+void	ft_lstdelone(t_list **lst)
+{
+	if (lst && *lst)
+	{
+		free(*lst);
+		*lst = NULL;
+	}
+}
+
+void	ft_lstclear(t_list **lst)
+{
+	t_list	*temp;
 	
-// }
+	if (!lst || !*lst)
+		return ;
+	while (*lst)
+	{
+		temp = (*lst)->next;
+		ft_lstdelone(lst);
+		*lst = temp;
+	}
+	*lst = NULL;
+}

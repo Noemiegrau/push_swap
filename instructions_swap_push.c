@@ -6,7 +6,7 @@
 /*   By: nograu <nograu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 15:45:10 by nograu            #+#    #+#             */
-/*   Updated: 2026/01/04 16:14:54 by nograu           ###   ########.fr       */
+/*   Updated: 2026/01/04 19:57:50 by nograu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,8 @@ void	sa(t_list **a)
 	if (!a || !*a || !(*a)->next)
 		return ;
 	temp_nb = (*a)->next->nb;
-	
 	(*a)->next->nb = (*a)->nb;
 	(*a)->nb = temp_nb;
-
 	temp_index = (*a)->next->index;
 	(*a)->next->index = (*a)->index;
 	(*a)->index = temp_index;
@@ -36,11 +34,9 @@ void	sb(t_list **b)
 
 	if (!b || !*b || !(*b)->next)
 		return ;
-
 	temp_nb = (*b)->next->nb;
 	(*b)->next->nb = (*b)->nb;
 	(*b)->nb = temp_nb;
-
 	temp_index = (*b)->next->index;
 	(*b)->next->index = (*b)->index;
 	(*b)->index = temp_index;
