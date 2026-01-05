@@ -6,7 +6,7 @@
 /*   By: nograu <nograu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/03 14:12:44 by nograu            #+#    #+#             */
-/*   Updated: 2026/01/04 22:24:50 by nograu           ###   ########.fr       */
+/*   Updated: 2026/01/05 20:25:55 by nograu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,17 +62,11 @@ static void	index_attribution(t_list **a, int *temp)
 	}
 }
 
-void	find_index(t_list **a)
+void	copy_a_to_temp(t_list **a, int *temp)
 {
 	t_list	*current;
-	int		*temp;
 	int		i;
 
-	if (!a || !*a)
-		return ;
-	temp = malloc(sizeof(int) * ps_lstsize(*a));
-	if (!temp)
-		return ;
 	i = 0;
 	current = *a;
 	while (current)
@@ -81,6 +75,18 @@ void	find_index(t_list **a)
 		current = current->next;
 		i++;
 	}
+}
+
+void	find_index(t_list **a)
+{
+	int		*temp;
+
+	if (!a || !*a)
+		return ;
+	temp = malloc(sizeof(int) * ps_lstsize(*a));
+	if (!temp)
+		return ;
+	copy_a_to_temp(a, temp);
 	bubble_sort(temp, ps_lstsize(*a));
 	index_attribution(a, temp);
 	free(temp);

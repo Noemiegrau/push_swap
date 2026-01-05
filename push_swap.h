@@ -6,7 +6,7 @@
 /*   By: nograu <nograu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 16:46:27 by nograu            #+#    #+#             */
-/*   Updated: 2026/01/05 18:06:44 by nograu           ###   ########.fr       */
+/*   Updated: 2026/01/05 20:25:53 by nograu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ void	sorting_three(t_list **a);
 void	sorting_four(t_list **a, t_list **b);
 void	sorting_five(t_list **a, t_list **b);
 void	find_index(t_list **a);
+void	copy_a_to_temp(t_list **a, int *temp);
 void	big_sorting(t_list **a, t_list **b);
 
 // ---------- FREE ---------- 
