@@ -6,7 +6,7 @@
 /*   By: nograu <nograu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/20 16:51:36 by nograu            #+#    #+#             */
-/*   Updated: 2026/01/04 21:46:26 by nograu           ###   ########.fr       */
+/*   Updated: 2026/01/05 19:36:30 by nograu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ static int	is_sorted(t_list **a)
 {
 	t_list	*current;
 
-//	if (!a || !*a) // A RETIRER car deja dans sorting()
-//		return (0);
 	current = *a;
 	while (current->next != NULL)
 	{
@@ -73,7 +71,20 @@ void	sorting(t_list **a, t_list **b)
 			temp = temp->next;// A SUPPR
 		}// A SUPPR
 	}
-	else if (ps_lstsize(*a) == 4 || ps_lstsize(*a) == 5)
+	else if (ps_lstsize(*a) == 4)
+	{
+		sorting_four(a, b);
+		write(1, "Success: Sorted 4\n", 18);// A SUPPR
+		printf("A list is now:\n");// A SUPPR
+		t_list	*temp = *a; // A SUPPR
+		while (temp)// A SUPPR
+		{// A SUPPR
+			printf("nb: %d\n", temp->nb);// A SUPPR
+			printf("index: %d\n", temp->index);// A SUPPR
+			temp = temp->next;// A SUPPR
+		}// A SUPPR
+	}
+	else if (ps_lstsize(*a) == 5)
 	{
 		sorting_five(a, b);
 		write(1, "Success: Sorted 5\n", 18);// A SUPPR
@@ -86,9 +97,9 @@ void	sorting(t_list **a, t_list **b)
 			temp = temp->next;// A SUPPR
 		}// A SUPPR
 	}
-	else
+	else if (ps_lstsize(*a) > 5)
 	{
-		//big_sorting(a, b);
+		big_sorting(a, b);
 		write(1, "Success: Sorting big numbers\n", 29);
 		printf("A list is now:\n");// A SUPPR
 		t_list *temp = *a; // A SUPPR
@@ -101,3 +112,22 @@ void	sorting(t_list **a, t_list **b)
 		return ;
 	}
 }
+
+// void	sorting(t_list **a, t_list **b)
+// {
+// 	if (!a || !*a) // A METTRE DANS TOUTES MES FONCTIONS ?? OU PAS ??
+// 		return ;
+// 	if (!(is_sorted(a)))
+// 		return ;
+// 	else if (ps_lstsize(*a) == 2)
+// 		sorting_two(a);
+// 	else if (ps_lstsize(*a) == 3)
+// 		sorting_three(a);
+// 	else if (ps_lstsize(*a) == 4)
+// 		sorting_four(a, b);
+// 	else if (ps_lstsize(*a) == 5)
+// 		sorting_five(a, b);
+// 	else if (ps_lstsize(*a) > 5)
+// 		big_sorting(a, b);
+// 	return ;
+// }
