@@ -6,7 +6,7 @@
 /*   By: nograu <nograu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 16:46:27 by nograu            #+#    #+#             */
-/*   Updated: 2026/01/05 20:25:53 by nograu           ###   ########.fr       */
+/*   Updated: 2026/01/06 17:09:19 by nograu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,16 @@ typedef struct s_list
 
 // ---------- PARSING ---------- 
 
+size_t	ft_strlen(const char *s);
+char	*ft_strdup(const char *s);
+char	**ft_split(char const *s, char c);
 long	ft_atoi_long(const char *nptr);
 int		is_dup(int argc, char **argv);
 int		is_over(int argc, char **argv);
 int		is_valid_num(int argc, char **argv);
+int		is_dup_split(char **arguments);
+int		is_over_split(char **arguments);
+int		is_valid_num_split(char **arguments);
 // int		main(int argc, char **argv); MAIN N'EST JAMAIS REPERTORIE DANS LE .h ???
 
 // ---------- LINKED LISTS ---------- 
@@ -72,5 +78,6 @@ void	big_sorting(t_list **a, t_list **b);
 // ---------- FREE ---------- 
 
 void	ft_lstclear(t_list **lst);
+void	free_args(char **arguments);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: nograu <nograu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 17:24:34 by nograu            #+#    #+#             */
-/*   Updated: 2026/01/04 20:19:11 by nograu           ###   ########.fr       */
+/*   Updated: 2026/01/06 17:26:59 by nograu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,4 +96,10 @@ int	is_valid_num(int argc, char **argv)
 		i++;
 	}
 	return (0);
+}
+
+char	**parsing(int argc, char **argv)
+{
+
+	return ;
 }

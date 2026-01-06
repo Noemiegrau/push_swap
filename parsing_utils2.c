@@ -1,49 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free.c                                             :+:      :+:    :+:   */
+/*   parsing_utils2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nograu <nograu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/04 18:53:18 by nograu            #+#    #+#             */
-/*   Updated: 2026/01/06 17:09:34 by nograu           ###   ########.fr       */
+/*   Created: 2026/01/06 12:47:03 by nograu            #+#    #+#             */
+/*   Updated: 2026/01/06 12:47:43 by nograu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_lstdelone(t_list **lst)
+size_t	ft_strlen(const char *s)
 {
-	if (lst && *lst)
-	{
-		free(*lst);
-		*lst = NULL;
-	}
-}
+	size_t	i;
 
-void	ft_lstclear(t_list **lst)
-{
-	t_list	*temp;
-	
-	if (!lst || !*lst)
-		return ;
-	while (*lst)
-	{
-		temp = (*lst)->next;
-		ft_lstdelone(lst);
-		*lst = temp;
-	}
-	*lst = NULL;
-}
-
-void	free_args(char **arguments)
-{
-	int	i;
-	
 	i = 0;
-	if (!arguments)
-		return ;
-	while (arguments[i])
-		free(arguments[i++]);
-	free(arguments);
+	while (s[i])
+		i++;
+	return (i);
+}
+
+char	*ft_strdup(const char *s)
+{
+	int		i;
+	int		len_s;
+	char	*dest;
+
+	i = 0;
+	len_s = ft_strlen(s);
+	dest = malloc(sizeof(char) * (len_s + 1));
+	if (!dest)
+		return (NULL);
+	while (s[i])
+	{
+		dest[i] = s[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }
