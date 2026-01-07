@@ -6,7 +6,7 @@
 /*   By: nograu <nograu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 15:01:24 by nograu            #+#    #+#             */
-/*   Updated: 2026/01/06 17:26:29 by nograu           ###   ########.fr       */
+/*   Updated: 2026/01/06 19:00:19 by nograu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,14 @@ int	main(int argc, char **argv)
 	a = NULL;
 	b = NULL;
 	i = 0;
-	arguments = NULL;
 	if (argc < 2)
 		return (0);
 	arguments = parsing(argc, argv);
 	if (!arguments) // correct  ?
 		return (write(2, "Error\n", 6), 1);
-	if ((is_valid_num_split(arguments) != 0)
-	 		|| (is_over_split(arguments) != 0)
-	 		|| (is_dup_split(arguments) != 0))
+	if ((is_valid_num(arguments) != 0)
+	 		|| (is_over(arguments) != 0)
+	 		|| (is_dup(arguments) != 0))
 	 			return (free_args(arguments), ft_lstclear(&a), 1);
 	while (arguments[i])
 		ps_lstadd_back(&a, ps_lstnew((int)ft_atoi_long(arguments[i++])));

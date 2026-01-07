@@ -6,7 +6,7 @@
 /*   By: nograu <nograu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 17:24:34 by nograu            #+#    #+#             */
-/*   Updated: 2026/01/06 17:26:59 by nograu           ###   ########.fr       */
+/*   Updated: 2026/01/08 00:22:24 by nograu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,35 +38,34 @@ long	ft_atoi_long(const char *nptr)
 	return (result * sign);
 }
 
-int	is_dup(int argc, char **argv)
+int	is_dup(char **arguments)
 {
 	int	i;
 	int	j;
 
-	i = 1;
-	while (i < argc)
+	i = 0;
+	while (arguments[i])
 	{
 		j = i + 1;
-		while (j < argc)
+		while (arguments[j])
 		{
-			if (ft_atoi_long(argv[i]) == ft_atoi_long(argv[j]))
+			if (ft_atoi_long(arguments[i]) == ft_atoi_long(arguments[j++]))
 				return (write(2, "Error\n", 6), 1);
-			j++;
 		}
 		i++;
 	}
 	return (0);
 }
 
-int	is_over(int argc, char **argv)
+int	is_over(char **arguments)
 {
 	long	n;
 	int		i;
 
-	i = 1;
-	while (i < argc)
+	i = 0;
+	while (arguments[i])
 	{
-		n = ft_atoi_long(argv[i]);
+		n = ft_atoi_long(arguments[i]);
 		if (n < INT_MIN || n > INT_MAX)
 			return (write(2, "Error\n", 6), 1);
 		i++;
@@ -74,22 +73,22 @@ int	is_over(int argc, char **argv)
 	return (0);
 }
 
-int	is_valid_num(int argc, char **argv)
+int	is_valid_num(char **arguments)
 {
 	int	i;
 	int	j;
 
-	i = 1;
-	while (i < argc)
+	i = 0;
+	while (arguments[i])
 	{
 		j = 0;
-		if (argv[i][j] == '+' || argv[i][j] == '-')
+		if (arguments[i][j] == '+' || arguments[i][j] == '-')
 			j++;
-		if (!argv[i][j])
+		if (!arguments[i][j])
 			return (write(2, "Error\n", 6), 1);
-		while (argv[i][j])
+		while (arguments[i][j])
 		{
-			if (!(argv[i][j] >= '0' && argv[i][j] <= '9'))
+			if (!(arguments[i][j] >= '0' && arguments[i][j] <= '9'))
 				return (write(2, "Error\n", 6), 1);
 			j++;
 		}
@@ -100,6 +99,43 @@ int	is_valid_num(int argc, char **argv)
 
 char	**parsing(int argc, char **argv)
 {
+	char	**arguments;
+	int		total_args;
+	int		i;
+	int		j;
+	int		k;
+	int		l;
+	int		start;
 
-	return ;
+	i = 1;
+	k = 0;
+	total_args = count_args(argc, argv);
+	arguments = malloc(sizeof(char *) * (total_args + 1));
+	if (!arguments)
+		return (NULL);
+	while (i < argc)
+	{
+		j = 0;
+		while (argv[i][j])
+		{
+			while (argv[i][j] == ' ')
+				j++;
+			if (!argv[i][j])
+				break ;
+			start = j;
+			while (argv[i][j] && argv[i][j] != ' ')
+				j++;
+			arguments[k] = malloc(sizeof(char) * (j - start + 1));
+			if (!arguments[k])
+				return (free_args(arguments), NULL);
+			l = 0;
+			while (start < j)
+				arguments[k][l++] = argv[i][start++];
+			arguments[k][l] = '\0';
+			k++;
+		}
+		i++;
+	}
+	arguments[k] = NULL;
+	return (arguments);
 }

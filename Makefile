@@ -6,7 +6,7 @@
 #    By: nograu <nograu@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/11 17:04:28 by nograu            #+#    #+#              #
-#    Updated: 2026/01/06 12:50:10 by nograu           ###   ########.fr        #
+#    Updated: 2026/01/06 18:44:57 by nograu           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,6 @@ SRC			=	push_swap.c \
 				big_sort_radix.c \
 				big_sort_utils.c \
 				parsing.c \
-				parsing_split.c \
 				parsing_utils.c \
 				parsing_utils2.c \
 				free.c

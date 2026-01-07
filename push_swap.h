@@ -6,7 +6,7 @@
 /*   By: nograu <nograu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 16:46:27 by nograu            #+#    #+#             */
-/*   Updated: 2026/01/06 17:09:19 by nograu           ###   ########.fr       */
+/*   Updated: 2026/01/07 19:10:05 by nograu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,11 @@ size_t	ft_strlen(const char *s);
 char	*ft_strdup(const char *s);
 char	**ft_split(char const *s, char c);
 long	ft_atoi_long(const char *nptr);
-int		is_dup(int argc, char **argv);
-int		is_over(int argc, char **argv);
-int		is_valid_num(int argc, char **argv);
-int		is_dup_split(char **arguments);
-int		is_over_split(char **arguments);
-int		is_valid_num_split(char **arguments);
-// int		main(int argc, char **argv); MAIN N'EST JAMAIS REPERTORIE DANS LE .h ???
+int		is_dup(char **arguments);
+int		is_over(char **arguments);
+int		is_valid_num(char **arguments);
+int		count_args(int argc, char **argv);
+char	**parsing(int argc, char **argv);
 
 // ---------- LINKED LISTS ---------- 
 
@@ -53,15 +51,21 @@ void	ps_lstadd_back(t_list **lst, t_list *new);
 // ---------- STACK INSTRUCTIONS ---------- 
 
 void	sa(t_list **a);
+void 	instructions_sa(t_list **a);
 void	sb(t_list **b);
+void	instructions_sb(t_list **b);
 void	ss(t_list **a, t_list **b);
 void	pa(t_list **a, t_list **b);
 void	pb(t_list **a, t_list **b);
 void	ra(t_list **a);
+void	instructions_ra(t_list **a);
 void	rb(t_list **b);
+void	instructions_rb(t_list **b);
 void	rr(t_list **a, t_list **b);
 void	rra(t_list **a);
+void	instructions_rra(t_list **a);
 void	rrb(t_list **b);
+void	instructions_rrb(t_list **b);
 void	rrr(t_list **a, t_list **b);
 
 // ---------- SORTING ---------- 

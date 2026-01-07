@@ -6,7 +6,7 @@
 /*   By: nograu <nograu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/03 14:11:24 by nograu            #+#    #+#             */
-/*   Updated: 2026/01/05 20:49:56 by nograu           ###   ########.fr       */
+/*   Updated: 2026/01/08 00:38:41 by nograu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,15 +35,21 @@ static int	find_max_bit(t_list **a)
 
 static void	binary_shifting(t_list **a, t_list **b, int i)
 {
-	while (*a)
+	int	size;
+	int	j;
+
+	j = 0;
+	size = ps_lstsize(*a);
+	while (j < size)
 	{
 		if ((((*a)->index >> i) & 1) == 0)
 			pb(a, b);
-		else if ((((*a)->index >> i) & 1) == 1)
+		else
 			ra(a);
+		j++;
 	}
-	while (*b)
-		pa(a, b);
+		while (*b)
+			pa(a, b);
 	return ;
 }
 

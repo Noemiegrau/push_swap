@@ -1,60 +1,62 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   instructions_rotate.c                              :+:      :+:    :+:   */
+/*   instructions_swap.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nograu <nograu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 15:45:10 by nograu            #+#    #+#             */
-/*   Updated: 2026/01/07 19:18:53 by nograu           ###   ########.fr       */
+/*   Updated: 2026/01/07 19:02:34 by nograu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	instructions_ra(t_list **a)
+void	instructions_sa(t_list **a)
 {
-	t_list	*temp;
-	t_list	*last;
+	int		temp_nb;
+	int		temp_index;
 
 	if (!a || !*a || !(*a)->next)
 		return ;
-	temp = *a;
-	*a = (*a)->next;
-	last = ps_lstlast(*a);
-	last->next = temp;
-	temp->next = NULL;
+	temp_nb = (*a)->next->nb;
+	(*a)->next->nb = (*a)->nb;
+	(*a)->nb = temp_nb;
+	temp_index = (*a)->next->index;
+	(*a)->next->index = (*a)->index;
+	(*a)->index = temp_index;
 }
 
-void	ra(t_list **a)
+void	sa(t_list **a)
 {
-	instructions_ra(a);
-	write(1, "ra\n", 3);
+	instructions_sa(a);
+	write(1, "sa\n", 3);
 }
 
-void	instructions_rb(t_list **b)
+void	instructions_sb(t_list **b)
 {
-	t_list	*temp;
-	t_list	*last;
+	int		temp_nb;
+	int		temp_index;
 
 	if (!b || !*b || !(*b)->next)
 		return ;
-	temp = *b;
-	*b = (*b)->next;
-	last = ps_lstlast(*b);
-	last->next = temp;
-	temp->next = NULL;
+	temp_nb = (*b)->next->nb;
+	(*b)->next->nb = (*b)->nb;
+	(*b)->nb = temp_nb;
+	temp_index = (*b)->next->index;
+	(*b)->next->index = (*b)->index;
+	(*b)->index = temp_index;
 }
 
-void	rb(t_list **b)
+void	sb(t_list **b)
 {
-	instructions_rb(b);
-	write(1, "rb\n", 3);
+	instructions_sb(b);
+	write(1, "sb\n", 3);
 }
 
-void	rr(t_list **a, t_list **b)
+void	ss(t_list **a, t_list **b)
 {
-	instructions_ra(a);
-	instructions_rb(b);
-	write(1, "rr\n", 3);
+	instructions_sa(a);
+	instructions_sb(b);
+	write(1, "ss\n", 3);
 }
