@@ -6,7 +6,7 @@
 #    By: nograu <nograu@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/11 17:04:28 by nograu            #+#    #+#              #
-#    Updated: 2026/01/08 14:36:02 by nograu           ###   ########.fr        #
+#    Updated: 2026/01/08 16:43:08 by nograu           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,14 +23,6 @@ NAME		=	push_swap
 CC			=	cc
 
 CFLAGS		=	-Wall -Werror -Wextra
-
-# =========================
-# Libft
-# =========================
-
-LIBFT_DIR	=	libft
-
-LIBFT		=	$(LIBFT_DIR)/libft.a
 
 # =========================
 # Sources & Object Files
@@ -57,24 +49,19 @@ OBJ			=	$(SRC:.c=.o)
 # Rules
 # =========================
 
-all: $(LIBFT) $(NAME)
+all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) $(LIBFT) -o $(NAME)
-
-$(LIBFT):
-	make -C $(LIBFT_DIR)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJ)
-	make -C $(LIBFT_DIR) clean
 
 fclean: clean
 	rm -f $(NAME)
-	make -C $(LIBFT_DIR) fclean
 
 re: fclean all
 
