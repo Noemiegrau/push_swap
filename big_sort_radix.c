@@ -6,7 +6,7 @@
 /*   By: nograu <nograu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/03 14:11:24 by nograu            #+#    #+#             */
-/*   Updated: 2026/01/08 00:38:41 by nograu           ###   ########.fr       */
+/*   Updated: 2026/01/08 14:46:46 by nograu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,17 @@
 static int	find_max_bit(t_list **a)
 {
 	t_list	*current;
-	int	bits_needed;
-	int	index_max;
+	int		bits_needed;
+	int		index_max;
 
 	current = *a;
 	bits_needed = 0; // strlen(temp) = 1100011 >> 7 != 0
-	index_max = 0; 	 // strlen(temp) =   99   >> 7 != 0
+	index_max = 0; // strlen(temp) =   99   >> 7 != 0
 	while (current)
 	{
 		if (current->index > index_max)
 			index_max = current->index;
-		current = current->next; 
+		current = current->next;
 	}
 	while ((index_max >> bits_needed) != 0)
 		bits_needed++;
@@ -48,8 +48,8 @@ static void	binary_shifting(t_list **a, t_list **b, int i)
 			ra(a);
 		j++;
 	}
-		while (*b)
-			pa(a, b);
+	while (*b)
+		pa(a, b);
 	return ;
 }
 
@@ -57,7 +57,7 @@ void	big_sorting(t_list **a, t_list **b)
 {
 	int	i;
 	int	max_bit;
-	
+
 	i = 0;
 	max_bit = find_max_bit(a);
 	while (i < max_bit) // tant que nombre de tours

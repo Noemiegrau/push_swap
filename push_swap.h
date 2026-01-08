@@ -6,7 +6,7 @@
 /*   By: nograu <nograu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 16:46:27 by nograu            #+#    #+#             */
-/*   Updated: 2026/01/07 19:10:05 by nograu           ###   ########.fr       */
+/*   Updated: 2026/01/08 14:42:16 by nograu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
-# include <string.h>
+//# include <string.h>
 
 // ---------- STRUCTURES ---------- 
 
@@ -51,7 +51,7 @@ void	ps_lstadd_back(t_list **lst, t_list *new);
 // ---------- STACK INSTRUCTIONS ---------- 
 
 void	sa(t_list **a);
-void 	instructions_sa(t_list **a);
+void	instructions_sa(t_list **a);
 void	sb(t_list **b);
 void	instructions_sb(t_list **b);
 void	ss(t_list **a, t_list **b);

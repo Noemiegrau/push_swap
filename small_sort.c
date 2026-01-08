@@ -6,7 +6,7 @@
 /*   By: nograu <nograu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 15:39:37 by nograu            #+#    #+#             */
-/*   Updated: 2026/01/07 19:14:48 by nograu           ###   ########.fr       */
+/*   Updated: 2026/01/08 14:45:10 by nograu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,13 @@ void	sorting_three(t_list **a)
 	}
 	else if (first > second && second < third && first > third) // 312
 		ra(a);
-	else if (first < second && second > third && first > third)  // 231
+	else if (first < second && second > third && first > third) // 231
 		rra(a);
 }
 
 void	sorting_four(t_list **a, t_list **b)
 {
-	while(ps_lstsize(*b) < 1)
+	while (ps_lstsize(*b) < 1)
 	{
 		if ((*a)->index == 0)
 			pb(a, b);
@@ -63,7 +63,7 @@ void	sorting_four(t_list **a, t_list **b)
 
 void	sorting_five(t_list **a, t_list **b)
 {
-	while(ps_lstsize(*b) < 2)
+	while (ps_lstsize(*b) < 2)
 	{
 		if ((*a)->index == 0 || (*a)->index == 1)
 			pb(a, b);

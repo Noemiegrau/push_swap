@@ -6,7 +6,7 @@
 /*   By: nograu <nograu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 12:47:03 by nograu            #+#    #+#             */
-/*   Updated: 2026/01/06 18:48:19 by nograu           ###   ########.fr       */
+/*   Updated: 2026/01/08 14:50:18 by nograu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	count_args(int argc, char **argv)
 	int	i;
 	int	count;
 	int	j;
-	
+
 	count = 0;
 	i = 1;
 	while (i < argc)

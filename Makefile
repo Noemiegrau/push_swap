@@ -6,7 +6,7 @@
 #    By: nograu <nograu@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/11 17:04:28 by nograu            #+#    #+#              #
-#    Updated: 2026/01/06 18:44:57 by nograu           ###   ########.fr        #
+#    Updated: 2026/01/08 14:36:02 by nograu           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,8 @@ SRC			=	push_swap.c \
 				linked_lists_utils.c \
 				instructions_reverse.c \
 				instructions_rotate.c \
-				instructions_swap_push.c \
+				instructions_push.c \
+				instructions_swap.c \
 				small_sort.c \
 				sorting.c \
 				big_sort_radix.c \

@@ -6,12 +6,11 @@
 /*   By: nograu <nograu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 17:24:34 by nograu            #+#    #+#             */
-/*   Updated: 2026/01/08 00:22:24 by nograu           ###   ########.fr       */
+/*   Updated: 2026/01/08 15:46:15 by nograu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <string.h>
 
 long	ft_atoi_long(const char *nptr)
 {
@@ -100,40 +99,25 @@ int	is_valid_num(char **arguments)
 char	**parsing(int argc, char **argv)
 {
 	char	**arguments;
-	int		total_args;
+	char	**args_to_split;
 	int		i;
 	int		j;
 	int		k;
-	int		l;
-	int		start;
 
 	i = 1;
 	k = 0;
-	total_args = count_args(argc, argv);
-	arguments = malloc(sizeof(char *) * (total_args + 1));
+	arguments = malloc(sizeof(char *) * (count_args(argc, argv) + 1));
 	if (!arguments)
 		return (NULL);
 	while (i < argc)
 	{
+		args_to_split = ft_split(argv[i], ' ');
+		if (!args_to_split)
+			return (free_args(arguments), NULL);
 		j = 0;
-		while (argv[i][j])
-		{
-			while (argv[i][j] == ' ')
-				j++;
-			if (!argv[i][j])
-				break ;
-			start = j;
-			while (argv[i][j] && argv[i][j] != ' ')
-				j++;
-			arguments[k] = malloc(sizeof(char) * (j - start + 1));
-			if (!arguments[k])
-				return (free_args(arguments), NULL);
-			l = 0;
-			while (start < j)
-				arguments[k][l++] = argv[i][start++];
-			arguments[k][l] = '\0';
-			k++;
-		}
+		while (args_to_split[j])
+			arguments[k++] = args_to_split[j++];
+		free(args_to_split);
 		i++;
 	}
 	arguments[k] = NULL;
