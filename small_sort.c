@@ -6,7 +6,7 @@
 /*   By: nograu <nograu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 15:39:37 by nograu            #+#    #+#             */
-/*   Updated: 2026/01/08 14:45:10 by nograu           ###   ########.fr       */
+/*   Updated: 2026/01/08 17:04:59 by nograu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,21 +30,21 @@ void	sorting_three(t_list **a)
 	first = (*a)->nb;
 	second = (*a)->next->nb;
 	third = (*a)->next->next->nb;
-	if (first > second && second > third && first > third) // 321
+	if (first > second && second > third && first > third)
 	{
 		sa(a);
 		rra(a);
 	}
-	else if (first > second && second < third && first < third) // 213
+	else if (first > second && second < third && first < third)
 		sa(a);
-	else if (first < second && second > third && first < third) // 132
+	else if (first < second && second > third && first < third)
 	{
 		sa(a);
 		ra(a);
 	}
-	else if (first > second && second < third && first > third) // 312
+	else if (first > second && second < third && first > third)
 		ra(a);
-	else if (first < second && second > third && first > third) // 231
+	else if (first < second && second > third && first > third)
 		rra(a);
 }
 
